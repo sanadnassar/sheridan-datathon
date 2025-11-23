@@ -53,7 +53,7 @@ HydraX relies on two primary datasets:
 - Provides **BNG coordinates** for each building  
 - Includes **rooftop area**, which is essential for calculating potential water collection
 
-#### **London Weather Dataset (`london_uweather`)**
+#### **London Weather Dataset**
 - Contains **daily precipitation data** for London  
 - Covers the years **1979–2020**  
 - Used to analyze historical rainfall patterns and train a predictive model for the future
