@@ -128,8 +128,3 @@ HydraX empowers:
 - **Environmental researchers**: Analyze urban water sustainability trends  
 
 By providing building-specific rainwater predictions, HydraX contributes to reducing water waste, promoting sustainability, and creating more resilient cities.
-
----
-
-## 📄 License
-Add your license (MIT, GPL, etc.) here if applicable.
