@@ -2,9 +2,13 @@
 
 import requests
 from typing import Optional, Tuple
+from pyproj import Transformer
 from config import settings
 
 GEOCODE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
+
+# Transformer from WGS84 (EPSG:4326) to British National Grid (OSGB36, EPSG:27700)
+transformer = Transformer.from_crs("EPSG:4326", "EPSG:27700", always_xy=True)
 
 
 class GeocodingError(Exception):
@@ -13,7 +17,7 @@ class GeocodingError(Exception):
 
 def geocode_address(address: str) -> Tuple[float, float]:
     """
-    Given a human-readable address string, return (lat, lng).
+    Given a human-readable address string, return (easting, northing) in British National Grid (OSGB36, EPSG:27700).
     Raises GeocodingError if not found or API error.
     """
     if not settings.GOOGLE_MAPS_API_KEY:
@@ -41,4 +45,8 @@ def geocode_address(address: str) -> Tuple[float, float]:
     location = data["results"][0]["geometry"]["location"]
     lat = location["lat"]
     lng = location["lng"]
-    return lat, lng
+    
+    # Convert from WGS84 (lat/lng) to British National Grid (Easting/Northing)
+    easting, northing = transformer.transform(lng, lat)
+    
+    return easting, northing

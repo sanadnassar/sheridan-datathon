@@ -10,7 +10,8 @@ geocoding_bp = Blueprint("geocoding", __name__, url_prefix="/api")
 def geocode():
     """
     Expects JSON body: { "address": "123 Fake St, London" }
-    Returns: { "lat": ..., "lng": ... } or { "error": "Invalid address" }
+    Returns: { "easting": ..., "northing": ... } in British National Grid (OSGB36, EPSG:27700)
+    or { "error": "Invalid address" }
     """
     data = request.get_json(silent=True) or {}
     address = data.get("address")
@@ -19,7 +20,7 @@ def geocode():
         return jsonify({"error": "address is required"}), 400
 
     try:
-        lat, lng = geocode_address(address)
+        easting, northing = geocode_address(address)
     except GeocodingError:
         return jsonify({"error": "Invalid address"}), 400
     except Exception as e:
@@ -28,6 +29,6 @@ def geocode():
 
     return jsonify({
         "address": address,
-        "lat": lat,
-        "lng": lng
+        "easting": easting,
+        "northing": northing
     })

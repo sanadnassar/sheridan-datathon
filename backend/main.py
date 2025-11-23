@@ -1,21 +1,23 @@
-from fastapi import FastAPI, UploadFile, File
-from fastapi.middleware.cors import CORSMiddleware
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
-app = FastAPI()
+app = Flask(__name__)
 
 # Allow frontend to call backend during hackathon
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+CORS(app, origins="*", methods=["*"], allow_headers=["*"])
 
-@app.get("/")
+@app.route("/", methods=["GET"])
 def root():
-    return {"status": "ok"}
+    return jsonify({"status": "ok"})
 
-@app.post("/analyze")
-async def analyze(file: UploadFile = File(...)):
+@app.route("/analyze", methods=["POST"])
+def analyze():
+    if "file" not in request.files:
+        return jsonify({"error": "No file provided"}), 400
+    
+    file = request.files["file"]
+    if file.filename == "":
+        return jsonify({"error": "No file selected"}), 400
+    
     # TODO: run segmentation + area + rainfall
-    return {"filename": file.filename, "message": "received"}
+    return jsonify({"filename": file.filename, "message": "received"})
