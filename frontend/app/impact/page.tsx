@@ -229,7 +229,7 @@ export default function ImpactPage() {
               initial={{ opacity: 0, x: 25 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.15, duration: 0.7 }}
-              style={{ width: "350px"}}
+              style={{ width: "350px", minHeight: "660px"}}
             >
               <h2 className="hx-step-title" style={{ marginBottom: "0.75rem" }}>
                 Snapshot metrics
@@ -243,7 +243,7 @@ export default function ImpactPage() {
                 className="hx-impact-metrics"
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
                   gap: "0.9rem",
                 }}
               >
@@ -374,24 +374,26 @@ export default function ImpactPage() {
           )}
 
       {/* Back Button */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        style={{
-          position: "absolute",
-          top: "80px",
-          right: "12.59%",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-        }}
-      >
-        <Link href="/" className="hx-btn-back">
-          <FiArrowLeft size={16} />
-          <span>Back to Home</span>
-        </Link>
-      </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: -10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.4 }}
+  style={{
+    position: "fixed",
+    top: "80px",
+    right: "60px",
+    zIndex: 1000, // keep above other content
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+  }}
+>
+  <Link href="/" className="hx-btn-back">
+    <FiArrowLeft size={16} />
+    <span>Back to Home</span>
+  </Link>
+</motion.div>
+
         </div>
       </section>
     </main>
