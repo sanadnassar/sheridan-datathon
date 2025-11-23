@@ -79,7 +79,7 @@ a {
 }
 
 .hx-nav-inner {
-  max-width: 1150px;
+  max-width: 1456px;
   margin: 0 auto;
   padding: 14px 10%;
   display: flex;
@@ -330,7 +330,7 @@ a {
 .hx-section-subtitle {
   font-size: 0.95rem;
   color: var(--hx-text-muted);
-  max-width: 600px;
+  max-width: 420px;
 }
 
 /* ---------- GENERIC CARDS / SPLIT / LISTS ---------- */
@@ -562,3 +562,85 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
+
+.hx-card-link {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hx-card-link:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 22px 60px rgba(87, 204, 153, 0.5);
+  border-color: rgba(199, 249, 204, 0.8);
+}
+
+
+/* Makes Team Card Larger */
+.hx-team-card {
+  background: var(--hx-card-bg);
+  border-radius: var(--hx-radius-xl);
+  padding: 16px 18px;
+  border: 1px solid rgba(199, 249, 204, 0.16);
+  box-shadow: var(--hx-shadow-soft);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  height: 140px;
+}
+
+.hx-team-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 22px 50px rgba(87, 204, 153, 0.4);
+  border-color: rgba(199, 249, 204, 0.7);
+  height: 200px;
+}
+
+.hx-team-detail {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0.8rem;
+  color: var(--hx-text-muted);
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.hx-team-card:hover .hx-team-detail {
+  opacity: 1;
+  max-height: 100px;
+}
+
+.hx-team-hover-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  font-size: 0.8rem;
+  color: var(--hx-text-muted);
+  margin-top: 8px;
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+/* When card is hovered, reveal the text */
+.hx-team-card:hover .hx-team-hover-text {
+  opacity: 1;
+  max-height: 100px; /* enough space for 2–3 lines */
+}
+
+/* Larger Team Card */
+
+/* Might Remove Later Depends On How Nice */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(87, 204, 153, 0.2), transparent 60%);
+  pointer-events: none;
+  animation: fadeOut 0.8s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+

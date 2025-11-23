@@ -1,6 +1,8 @@
-// app/page.tsx
 "use client";
-
+// app/page.tsx
+import Link from "next/link";
+import {SiPython, SiReact, SiFlask, SiNextdotjs, SiTailwindcss, SiJavascript,
+SiTypescript, SiNodedotjs,SiHtml5, SiCss3, SiGithub} from "react-icons/si";
 import { useEffect } from "react";
 
 export default function HomePage() {
@@ -86,7 +88,7 @@ export default function HomePage() {
           </div>
 
           <div className="hx-hero-visual hx-reveal">
-            <div className="hx-hero-card">
+            <Link href="/impact" className="hx-hero-card hx-card-link" target="_self">
               <p className="hx-hero-card-title">
                 London Rainwater Harvesting Snapshot (Prototype)
               </p>
@@ -112,7 +114,7 @@ export default function HomePage() {
                   <p className="hx-metric-tag">Boroughs analysed</p>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -321,37 +323,63 @@ export default function HomePage() {
       <section id="team" className="hx-section hx-section-alt">
         <div className="hx-container hx-reveal">
           <div className="hx-section-header">
-            <p className="hx-section-kicker">Team</p>
-            <h2 className="hx-section-title">The HydraX builders</h2>
+            <p className="hx-section-kicker">Meet The Team</p>
             <p className="hx-section-subtitle">
-              A small team of developers and data enthusiasts building AI tools
-              for climate resilience.
+              We’re a team of computer and data scientists building AI tools
+              that drive real-world impact — one breakthrough at a time.
             </p>
           </div>
 
           <div className="hx-team-grid">
-            {/* Replace these placeholders with your real names & roles */}
             <div className="hx-team-card">
-              <p className="hx-team-role">Data &amp; Geospatial Lead</p>
-              <p className="hx-team-name">Your Name</p>
+              <p className="hx-team-role">Frontend & Visualization Engineer</p>
+              <p className="hx-team-name">Sanad Nassar</p>
               <p className="hx-team-note">
-                Rainfall modelling, rooftop potential and spatial analysis.
+                Frontend development and UI integration for rainfall modeling,
+                rooftop potential, and spatial analysis tools.
+              </p>
+              <p className="hx-team-hover-text">
+                <SiReact title="React" size={30}/>
+                <SiHtml5 title="Html" size={30}/>
+                <SiCss3 title="Css" size={30}/>
+                <SiJavascript title="Javascript" size={30}/>
+                <SiFlask title="Flask" size={30}/>
+                <SiNextdotjs title="Nextdotjs" size={30}/>
+                <SiGithub title="Github" size={30}/>
               </p>
             </div>
             <div className="hx-team-card">
               <p className="hx-team-role">Full-stack Engineer</p>
-              <p className="hx-team-name">Teammate 2</p>
+              <p className="hx-team-name">Shaun Malhotra</p>
               <p className="hx-team-note">
-                Backend APIs, integration with mapping libraries and deployment.
+                Backend APIs, integration with mapping libraries.
+                Git version control and collaborative workflow management.
               </p>
             </div>
             <div className="hx-team-card">
+              <p className="hx-team-role">AI Engineer</p>
+              <p className="hx-team-name">Ethan Wang</p>
+              <p className="hx-team-note">
+                Model training, data preprocessing, and API deployment for rainfall
+                and spatial prediction systems.
+              </p>
+            </div>
+              <div className="hx-team-card">
+              <p className="hx-team-role">Data Engineer</p>
+              <p className="hx-team-name">ML Engineer</p>
+              <p className="hx-team-note">
+                Data collection, cleaning, and structuring.
+                Development of data pipelines and preparation of datasets for AI analysis.
+              </p>
+            </div>
+              <div className="hx-team-card">
               <p className="hx-team-role">UX &amp; Storytelling</p>
               <p className="hx-team-name">Teammate 3</p>
               <p className="hx-team-note">
                 Narrative, SDG framing and interface polish for the demo.
               </p>
             </div>
+
           </div>
         </div>
       </section>
