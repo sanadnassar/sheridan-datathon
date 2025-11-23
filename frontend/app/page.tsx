@@ -39,7 +39,7 @@ export default function HomePage() {
             <a href="#problem">Problem</a>
             <a href="#solution">Solution</a>
             <a href="#impact">Impact</a>
-            <a href="#team">Team</a>
+            <a href="#team">Team</a>c c 
           </nav>
         </div>
       </header>
