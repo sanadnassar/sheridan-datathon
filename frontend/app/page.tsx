@@ -1,8 +1,8 @@
 "use client";
 // app/page.tsx
 import Link from "next/link";
-import {SiPython, SiReact, SiFlask, SiNextdotjs, SiTailwindcss, SiJavascript,
-SiTypescript, SiNodedotjs,SiHtml5, SiCss3, SiGithub} from "react-icons/si";
+import {SiPython, SiReact, SiFlask, SiNextdotjs, SiFastapi, SiJavascript,
+SiTypescript, SiNodedotjs,SiHtml5, SiCss3, SiGithub, SiSqlite} from "react-icons/si";
 import { useEffect } from "react";
 
 export default function HomePage() {
@@ -39,7 +39,7 @@ export default function HomePage() {
             <a href="#problem">Problem</a>
             <a href="#solution">Solution</a>
             <a href="#impact">Impact</a>
-            <a href="#team">Team</a>c c 
+            <a href="#team">Team</a>
           </nav>
         </div>
       </header>
@@ -60,12 +60,7 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="hx-hero-subtitle">
-              HydraX is an AI-powered sustainability tool that helps the city of
-              London, UK measure and visualize its rainwater harvesting
-              potential. By combining open-source environmental data with
-              geospatial analytics, HydraX calculates how much rainwater could
-              be collected from rooftops, visualizing the potential savings in
-              both liters of water and reduced stormwater runoff.
+              HydraX is a sustainability intelligence platform focused on maximizing London’s rainwater potential. By combining rooftop geometry with predictive rainfall analytics, HydraX estimates how much rainwater can be captured by each household — helping residents, planners, and policymakers understand their water-saving potential. The tool supports long-term feasibility planning for installing rooftop water reclamation systems, turning rainfall into a practical, sustainable water source for the city.
             </p>
             <p className="hx-hero-meta">
               Aligned with SDG 6, 11 &amp; 13 • Designed for planners,
@@ -128,10 +123,11 @@ export default function HomePage() {
               Turning London&apos;s rooftops into a hidden water reservoir
             </h2>
             <p className="hx-section-subtitle">
-              Urban areas lose millions of litres of clean rainwater every year
-              due to inefficient drainage and lack of collection systems. HydraX
-              helps city planners and sustainability teams quantify what&apos;s
-              possible, before expensive infrastructure decisions are made.
+            Urban areas lose millions of litres of clean rainwater
+            every year due to inefficient drainage and the absence of
+            localized collection systems. HydraX empowers city planners, sustainability teams,
+            and homeowners to quantify rooftop rainwater potential using predictive rainfall analytics — providing clear
+            insights before investing in large-scale infrastructure.
             </p>
           </div>
 
@@ -144,8 +140,8 @@ export default function HomePage() {
                 across London. The result is a geospatial layer that highlights:
               </p>
               <ul className="hx-list">
-                <li>How much rainwater can be harvested city-wide or by district.</li>
-                <li>Which rooftops offer the highest collection potential.</li>
+                <li>How much rainwater can be harvested city-wide or by address.</li>
+                <li>How much water collection potential your rooftop has.</li>
                 <li>
                   How rainfall patterns and urban density affect sustainable
                   water planning.
@@ -159,9 +155,9 @@ export default function HomePage() {
                 By revealing untapped rainwater resources, HydraX supports:
               </p>
               <ul className="hx-list">
-                <li>More efficient water use and access to clean water for families.</li>
-                <li>Reduced pressure on stormwater systems during heavy rainfall.</li>
-                <li>Better planning of green roofs and blue-green infrastructure.</li>
+                <li>Communities gaining better access to clean water by reducing dependence on overburdened municipal water systems. (SDG 6)</li>
+                <li>The Development of resilient, water-smart cities that can better handle flooding and drought conditions. (SDG 11)</li>
+                <li>Cities adapting to the impacts of climate change through solutions that reduce urban flooding from poor drainage systems. (SDG 13)</li>
               </ul>
             </div>
           </div>
@@ -339,13 +335,12 @@ export default function HomePage() {
                 rooftop potential, and spatial analysis tools.
               </p>
               <p className="hx-team-hover-text">
-                <SiReact title="React" size={30}/>
-                <SiHtml5 title="Html" size={30}/>
-                <SiCss3 title="Css" size={30}/>
-                <SiJavascript title="Javascript" size={30}/>
-                <SiFlask title="Flask" size={30}/>
-                <SiNextdotjs title="Nextdotjs" size={30}/>
-                <SiGithub title="Github" size={30}/>
+              <SiReact title="React" size={30} color="#61DAFB" />
+              <SiHtml5 title="HTML" size={30} color="#E34F26" />
+              <SiCss3 title="CSS" size={30} color="#1572B6" />
+              <SiJavascript title="JavaScript" size={30} color="#F7DF1E" />
+              <SiNextdotjs title="Next.js" size={30} color="#433d3dff" />
+              <SiGithub title="GitHub" size={30} color="#ffffffff" />
               </p>
             </div>
             <div className="hx-team-card">
@@ -355,6 +350,13 @@ export default function HomePage() {
                 Backend APIs, integration with mapping libraries.
                 Git version control and collaborative workflow management.
               </p>
+              <p className="hx-team-hover-text">
+              <SiPython title="Python" size={30} color="#3776AB" />
+              <SiFastapi title="FastAPI" size={30} color="#009688" />
+              <SiFlask title="Flask" size={30} color="#ef0000ff" />
+              <SiNextdotjs title="Next.js" size={30} color="#433d3dff" />
+              <SiGithub title="GitHub" size={30} color="#ffffff" />
+              </p>
             </div>
             <div className="hx-team-card">
               <p className="hx-team-role">AI Engineer</p>
@@ -363,20 +365,43 @@ export default function HomePage() {
                 Model training, data preprocessing, and API deployment for rainfall
                 and spatial prediction systems.
               </p>
+              <p className="hx-team-hover-text">
+              <SiPython title="Python" size={30} color="#3776AB" />
+              <SiFastapi title="FastAPI" size={30} color="#009688" />
+              <SiFlask title="Flask" size={30} color="#ef0000ff" />
+              <SiNextdotjs title="Next.js" size={30} color="#433d3dff" />
+              <SiGithub title="GitHub" size={30} color="#FFFFFF" />
+              </p>
             </div>
               <div className="hx-team-card">
               <p className="hx-team-role">Data Engineer</p>
-              <p className="hx-team-name">ML Engineer</p>
+              <p className="hx-team-name">Lopey Soleye</p>
               <p className="hx-team-note">
                 Data collection, cleaning, and structuring.
                 Development of data pipelines and preparation of datasets for AI analysis.
               </p>
+              <p className="hx-team-hover-text">
+                <SiPython title="Python" size={30} color="#3776AB" />
+                <SiSqlite title="SQLite" size={30} color="#adc166ff" />
+                <SiFlask title="Flask" size={30} color="#ef0000ff" />
+                <SiNextdotjs title="Next.js" size={30} color="#433d3dff" />
+                <SiGithub title="GitHub" size={30} color="#ffffffff" />
+              </p>
             </div>
               <div className="hx-team-card">
-              <p className="hx-team-role">UX &amp; Storytelling</p>
-              <p className="hx-team-name">Teammate 3</p>
+              <p className="hx-team-role">Database Architect</p>
+              <p className="hx-team-name">Hana</p>
               <p className="hx-team-note">
-                Narrative, SDG framing and interface polish for the demo.
+                Implements spatial indexing and
+                efficient data retrieval for large-scale building and
+                rainfall datasets.
+              </p>
+              <p className="hx-team-hover-text">
+              <SiPython title="Python" size={30} color="#3776AB" />
+              <SiSqlite title="SQLite" size={30} color="#adc166ff" />
+              <SiFlask title="Flask" size={30} color="#ef0000ff" />
+              <SiNextdotjs title="Next.js" size={30} color="#433d3dff" />
+              <SiGithub title="GitHub" size={30} color="#FFFFFF" />
               </p>
             </div>
 
@@ -386,18 +411,18 @@ export default function HomePage() {
 
       <footer className="hx-footer">
         <div className="hx-footer-inner">
-          <p>© {new Date().getFullYear()} HydraX. Built for the GDG Datathon.</p>
-          <div className="hx-footer-links">
+          <p>© {new Date().getFullYear()} HydraX. Built for Sheridan Datathon.</p>
+          <div className="hx-footer-links" style={{ cursor: "pointer" }}>
             {/* Put your real repo link here */}
             <a
-              href="https://github.com/your-username/hydrax"
+              href="https://github.com/sanadnassar/HydraX"
               target="_blank"
               rel="noreferrer"
+              style={{ cursor: "pointer"}}
             >
-              GitHub Repo
+              <SiGithub title="Github" size={15} className="hx-footer-links" style={{ cursor: "pointer" }}/>
+              <span className="hx-footer-links" style={{ cursor: "pointer" }}> - Github Repository</span>
             </a>
-            <span>•</span>
-            <span>SDG 6 · SDG 11 · SDG 13 (SDG 9 via innovation)</span>
           </div>
         </div>
       </footer>
