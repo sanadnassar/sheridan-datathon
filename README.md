@@ -92,13 +92,16 @@ HydraX uses **scikit-learn** to model rainwater collection potential:
 ## 🛠️ Tech Stack
 
 **Frontend**  
-- React (or another modern framework)  
-- Interactive address input form and map visualization  
+- Next.js
+- Node.js
+- React
+- TailwindCSS
+- Framer Motion
 
 **Backend**  
 - Python  
-- Flask or FastAPI  
-- scikit-learn for machine learning  
+- Flask
+- Scikit-learn library
 - Google Maps Geocoding API for address-to-coordinate conversion  
 - Coordinate conversion utilities (WGS84 → British National Grid)  
 
