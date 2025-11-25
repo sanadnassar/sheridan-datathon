@@ -1,9 +1,9 @@
-flask
+Flask
 flask-cors
 requests
 pyproj
 pandas
 scikit-learn
 numpy
+scikit-learn
 setuptools
-gunicorn

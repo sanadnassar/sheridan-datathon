@@ -47,6 +47,8 @@ def geocode_address(address: str) -> Tuple[float, float]:
     lng = location["lng"]
     
     # Convert from WGS84 (lat/lng) to British National Grid (Easting/Northing)
+    # Note: transformer was created with always_xy=True so it expects (lon, lat)
+    # (i.e. x=longitude, y=latitude). The previous code passed (lat, lng)
+    # which swapped the inputs and produced incorrect / inconsistent results.
     easting, northing = transformer.transform(lng, lat)
-    
     return easting, northing

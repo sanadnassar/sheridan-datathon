@@ -47,38 +47,37 @@ def find_nearest_building(easting: float, northing: float, database_path: str = 
     
     try:
         # Load all buildings from database
-        # Note: columns are named 'lat' and 'lon' but actually contain easting/northing values
+        # Columns should be named 'easting' and 'northing' for clarity
         cursor = conn.cursor()
-        cursor.execute("SELECT lat, lon, area FROM rooftops")
+        cursor.execute("SELECT easting, northing, area FROM rooftops")
         buildings = cursor.fetchall()
-        
+
         if not buildings:
             raise BuildingNotFoundError("No buildings found in database")
-        
+
         # Find the nearest building
         min_distance = float('inf')
         nearest_area = None
-        
+
         for db_easting, db_northing, area in buildings:
-            # Database already stores easting/northing (despite column names)
             # Calculate Euclidean distance in meters (since both are in OSGB36)
+            # The database columns are easting, northing (matching the geocoded
+            # output) so use them directly.
             distance = math.sqrt(
                 (easting - db_easting) ** 2 + 
                 (northing - db_northing) ** 2
             )
-            
             if distance < min_distance:
                 min_distance = distance
                 nearest_area = area
-        
+
         if nearest_area is None:
             raise BuildingNotFoundError("Could not find nearest building")
-        
+
         return {
             "area": nearest_area,
             "distance": min_distance
         }
-        
     except sqlite3.Error as e:
         raise BuildingNotFoundError(f"Database error: {e}")
     finally:
