@@ -7,6 +7,9 @@ The project directly contributes to two **United Nations Sustainable Development
 - **SDG 6 — Clean Water & Sanitation**: HydraX promotes efficient water management by identifying potential rainwater harvesting opportunities.  
 - **SDG 11 — Sustainable Cities & Communities**: HydraX supports sustainable urban planning by providing data-driven insights on building-level water conservation.
 
+Check out our website!
+https://hydrax-seven.vercel.app/
+
 ---
 
 ## 📌 Project Purpose
